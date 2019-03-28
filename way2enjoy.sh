@@ -43,7 +43,7 @@ process_image() {
       orig_size_display="$orig_size KB"
     fi
     log_info "Compressing \"$file\".... (${orig_size_display}) ($count of $files_count)\n"
-    curl --progress-bar --user api:"$api_key" --data-binary @files/"$file" --output api_response.txt -i https://way2enjoy.com/ads/1/1111/command/command-line.php
+    curl --progress-bar --user api:"$api_key" --data-binary @files/"$file" --output api_response.txt -i https://way2enjoy.com/modules/compress-png/command-line.php
     if [ -f api_response.txt ]; then
     status_code=$(head <api_response.txt -1 | awk '{print $2}')
     else
